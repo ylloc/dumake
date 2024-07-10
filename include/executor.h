@@ -9,4 +9,6 @@ class Executor {
 private:
   std::vector<Target> targets;
   std::map<std::string, std::string> variables;
+
+public:
 };
