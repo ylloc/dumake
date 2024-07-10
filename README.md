@@ -1,1 +1,31 @@
-# dumake
+# dumake - toy building tool
+
+`example.dk`
+```
+$source = main.cpp
+$output = build.out
+$compiler = clang++
+$flags = -std=c++23
+$dir = test
+
+<build>
+commands = [
+    'mkdir $dir',
+    'cd $dir',
+    '$compiler $flags -o ../$source'
+]
+
+<log>
+command = ''
+
+<run>: [<build>, <log>]
+command = './test/a.out'
+
+<execute>
+run
+```
+
+# Run
+```bash
+dumake example.dk
+```
